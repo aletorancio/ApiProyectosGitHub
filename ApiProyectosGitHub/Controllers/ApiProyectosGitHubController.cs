@@ -45,10 +45,10 @@ namespace ApiProyectosGitHub.Controllers
         }
 
         // PUT api/<ApiProyectosGitHubController>/5
-        [HttpPut("actualizar/{id}")]
-        public async Task<IActionResult> Actualizar(InfoProyectoDTO request)
+        [HttpPut("actualizar")]
+        public async Task<IActionResult> Actualizar([FromForm]InfoProyectoDTO request, [FromForm]int id)
         {
-            var respuesta = await _servicioCRUD.ActualizarInfoProyectoAsync(request);
+            var respuesta = await _servicioCRUD.ActualizarInfoProyectoAsync(request, id);
             if (!respuesta.RespuestaBD.OK)
             {
                 return BadRequest(respuesta);

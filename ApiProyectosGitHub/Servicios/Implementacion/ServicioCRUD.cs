@@ -13,10 +13,11 @@ namespace ApiProyectosGitHub.Servicios.Implementacion
         {
             _dataContext = dataContext;
         }
-        public async Task<InfoProyecto> ActualizarInfoProyectoAsync(InfoProyectoDTO request)
+        public async Task<InfoProyecto> ActualizarInfoProyectoAsync( InfoProyectoDTO request, int id)
         {
             var resultado = new InfoProyecto()
             {
+                Id = id,
                 Url = request.Url,
                 Descripcion = request.Descripcion,
                 TituloProyecto = request.TituloProyecto
@@ -47,7 +48,7 @@ namespace ApiProyectosGitHub.Servicios.Implementacion
             {
                 resultado = new InfoProyecto();
                 resultado.RespuestaBD.OK = false;
-                resultado.RespuestaBD.Mensaje = "Error al guardar el proyecto.";
+                resultado.RespuestaBD.Mensaje = "Error al actualizar el proyecto.";
                 resultado.RespuestaBD.Descripcion = ex.Message;
 
                 return resultado;

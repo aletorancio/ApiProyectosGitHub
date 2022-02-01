@@ -7,7 +7,7 @@ namespace ApiProyectosGitHub.Servicios
     {
         Task<List<InfoProyecto>> TraerInfoProyectoAsync();
         Task<InfoProyecto> EnviarInfoProyectoAsync(InfoProyectoDTO request);
-        Task<InfoProyecto> ActualizarInfoProyectoAsync(InfoProyectoDTO request);
+        Task<InfoProyecto> ActualizarInfoProyectoAsync(InfoProyectoDTO request, int id);
         Task<RespuestaBD> EliminarInfoProyectoAsync(int id);
     }
 }
