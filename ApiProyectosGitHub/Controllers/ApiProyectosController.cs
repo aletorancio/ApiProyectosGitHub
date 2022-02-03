@@ -9,11 +9,11 @@ namespace ApiProyectosGitHub.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ApiProyectosGitHubController : ControllerBase
+    public class ApiProyectosController : ControllerBase
     {
 
         private readonly IServicioCRUD _servicioCRUD;
-        public ApiProyectosGitHubController(IServicioCRUD servicioCRUD)
+        public ApiProyectosController(IServicioCRUD servicioCRUD)
         {
             _servicioCRUD = servicioCRUD;
         }

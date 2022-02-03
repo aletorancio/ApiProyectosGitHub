@@ -38,6 +38,7 @@ namespace ApiProyectosGitHub.Servicios.Implementacion
                     {
                         resultado = new InfoProyecto();
                         resultado.RespuestaBD.OK = false;
+                        resultado.RespuestaBD.Error = true;
                         resultado.RespuestaBD.Mensaje = "Error al guardar la imagen.";
                         resultado.RespuestaBD.Descripcion = "La imagen supera los 2 MB";
                         return resultado;
@@ -48,6 +49,7 @@ namespace ApiProyectosGitHub.Servicios.Implementacion
             {
                 resultado = new InfoProyecto();
                 resultado.RespuestaBD.OK = false;
+                resultado.RespuestaBD.Error = true;
                 resultado.RespuestaBD.Mensaje = "Error al actualizar el proyecto.";
                 resultado.RespuestaBD.Descripcion = ex.Message;
 
@@ -104,6 +106,7 @@ namespace ApiProyectosGitHub.Servicios.Implementacion
                     {
                         resultado = new InfoProyecto();
                         resultado.RespuestaBD.OK = false;
+                        resultado.RespuestaBD.Error = true;
                         resultado.RespuestaBD.Mensaje = "Error al guardar la imagen.";
                         resultado.RespuestaBD.Descripcion = "La imagen supera los 2 MB";
                         return resultado;
@@ -114,8 +117,9 @@ namespace ApiProyectosGitHub.Servicios.Implementacion
             {
                 resultado = new InfoProyecto();
                 resultado.RespuestaBD.OK = false;
+                resultado.RespuestaBD.Error = true;
                 resultado.RespuestaBD.Mensaje = "Error al guardar el proyecto.";
-                resultado.RespuestaBD.Descripcion = ex.Message;
+                resultado.RespuestaBD.Descripcion = ex.Message + "InnerException: " + ex.InnerException.Message;
 
                 return resultado;
             }
